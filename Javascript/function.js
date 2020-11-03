@@ -160,3 +160,55 @@ const simpleMultiply = (a, b) => {
 // Fun quiz time
 // function calculate(command, a, b)
 // command: add, substract, divide, multiply, remainder
+
+// function calculate(command, a, b) {
+//     if(command === adds || command === substarct || command === divide || command === multiply || command === remainder){
+//         console.log(command(a, b));
+//     }
+//     else{
+//         console.log('Command must adds, substract, divide, multiply, remainder');
+//     }
+// }
+
+// function adds(a, b){
+//     return a + b;
+// }
+
+// function substarct(a, b){
+//     return a - b;
+// }
+
+// function divide(a, b){
+//     return a / b;
+// }
+
+// function multiply(a, b){
+//     return a * b;
+// }
+
+// function remainder(a, b){
+//     return a % b;
+// }
+
+// calculate(adds, 1, 2);
+// calculate(divide, 2, 1);
+// calculate(FASFG, 2, 1);
+
+function calculate(command, a, b){
+    switch (command){
+        case 'add':
+            return a + b;
+        case 'substract':
+            return a - b;
+        case 'divide':
+            return a / b;
+        case 'multiply':
+            return a * b;
+        case 'remainer':
+            return a % b;
+        default:
+            throw Error('unkown command');
+    }
+}
+
+console.log(calculate('add', 2, 3));
