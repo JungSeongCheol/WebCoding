@@ -117,4 +117,4 @@ const fruit2 = {color: 'blue', size: 'big'};
 const mixed = Object.assign({}, fruit1, fruit2);
 console.log(mixed.color);
 console.log(mixed.size);
-// blue big이나옴, 그이유는 키값이 같다면 뒤에나온 키값이 앞에나온 키값을 덮어써버린다.
+// blue big이나옴, 그이유는 키값이 같다면 뒤에나온 키값이 앞에나온 키값을 덮어써버린다. 따라서 조심해야된다
