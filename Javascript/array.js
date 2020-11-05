@@ -1,6 +1,6 @@
 'use strict';
 
-// Array 자료구조
+// Array 자료구조(JavaScript)
 
 // 1. Declaration
 const arr1 = new Array();
