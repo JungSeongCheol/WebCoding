@@ -5,5 +5,5 @@ _Hello_
 # Header
 
 ```ts
-console.log("helo");
+console.log("hello");
 ```
