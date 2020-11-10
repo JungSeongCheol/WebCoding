@@ -53,3 +53,54 @@ const students = [
 }
 
 // 06. make an array of enrolled students
+{
+    const result = students.filter((student) => student.enrolled === true);
+    console.log(result);
+}
+
+// Q7. make an array containing only the students' scores
+// result should be: [45, 80, 90, 66, 88]
+{
+    const result = [];
+    for (const iterator of students) {
+        result.push(iterator.score);
+    }
+    console.log(result);
+}
+
+// Q8. check if there is a student with the score lower than 50
+{
+    console.clear();
+    let result = true;
+    if(students.find((student) => student.score < 50) != undefined)
+        result = false;
+    console.log(result);
+}
+
+// Q9. compute students' average score
+{
+    console.clear();
+    const result = students.reduce((prev, current) => {
+        console.log('--------');
+        console.log(prev);
+        console.log(current);
+        return prev + current.score;
+    }, 0); // reduce - 값을 누적시 필요. prev - index(여기서 선언한 0 부터) 리턴된 값이 들어옴, curr - 배열의 아이템을 순차적으로 출력
+    console.log(result/students.length);
+}
+
+// Q10. make a string containing all the scores
+// result should be: '45, 80, 90, 66, 88'
+{
+    console.clear();
+    const result = students.map((student) => student.score).join();
+    console.log(result);
+}
+
+// Bonus! do Q10 sorted in ascending order
+// result shold be: '45, 66, 80, 88, 90'
+{
+    console.clear();
+    const result = students.map((student) => student.score).sort().join();
+    console.log(result);
+}

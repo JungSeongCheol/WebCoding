@@ -51,3 +51,50 @@ const students = [
     const result = students.find((student) => student.score === 90);
     console.log(result);
 }
+
+// 06. make an array of enrolled students
+{
+    const result = students.filter((student) => student.enrolled);
+    console.log(result);
+}
+
+// Q7. make an array containing only the students' scores
+// resutl should be: [45, 80, 90, 66, 88]
+{
+    const result = students.map((student) => student.score);
+    console.log(result); // 배열안에 있는 데이터를 콜백 함수를 통해 다른 데이터로 변경하는 메서드 map
+    // callback함수 인자는 이해하기 쉬운것을 사용해야한다.
+}
+
+// Q8. check if there is a student with the score lower than 50
+{
+    console.clear();
+    const result = students.some((student) => student.score < 50); // some 하나의 조건을 찾음 (하나라도 있으면 true)
+    console.log(result);
+
+    const result2 = !students.every((student) => student.score >= 50); //every 모든 조건을 찾음 (하나라도 있으면 false)
+    console.log(result2);
+}
+
+// Q9. compute students' average score
+{
+    console.log();
+    const result = students.reduce((prev, current) => prev + current.score, 0); // reduce - 값을 누적시 필요. prev - index(여기서 선언한 0 부터) 리턴된 값이 들어옴, curr - 배열의 아이템을 순차적으로 출력
+    console.log(result / students.length);
+}
+
+// Q10. make a string containing all the scores
+// result should be: '45, 80, 90, 66, 88'
+{
+    console.clear();
+    const result = students.map((student) => student.score).filter(score => score >= 50).join(); // 50점 이상인것만 사용됨
+    console.log(result);
+}
+
+// Bonus! do Q10 sorted in ascending order
+// result shold be: '45, 66, 80, 88, 90'
+{
+    console.clear();
+    const result = students.map((student) => student.score).sort((a, b) => a - b).join();
+    console.log(result);
+}
